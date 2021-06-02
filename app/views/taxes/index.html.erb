@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Taxa Mensal</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Referência</th>
+      <th>Prazo para pagamento</th>
+      <th>Pagamento realizado em</th>
+      <th>Apartamento</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @taxes.each do |tax| %>
+      <tr>
+        <td><%= tax.reference_date.strftime("%m/%Y") %></td>
+        <td><%= tax.due_date.strftime("%d/%m/%Y") %></td>
+        <td>
+          <% if tax.payment_date %>
+            <%= tax.payment_date.strftime("%d/%m/%Y") %>
+          <% end %>
+        </td>
+        <td><%= tax.apartment.number %></td>
+        <td><%= link_to 'Detalhes', tax, class: "btn btn-sm btn-outline-dark" %></td>
+        <td><%= link_to 'Editar', edit_tax_path(tax), class: "btn btn-sm btn-outline-dark" %></td>
+        <td><%= link_to 'Remover', tax, method: :delete, data: { confirm: 'Você deseja excluir esta Taxa?' }, class: "btn btn-sm btn-outline-dark" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Adicionar Taxa', new_tax_path, class: "btn btn-sm btn-dark" %>

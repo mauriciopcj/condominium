@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Síndico</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Início da vigência</th>
+      <th>Fim da vigência</th>
+      <th>Síndico</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @syndics.each do |syndic| %>
+      <tr>
+        <td><%= syndic.start.strftime("%d/%m/%Y") %></td>
+        <td>
+          <% if syndic.end %>
+            <%= syndic.end.strftime("%d/%m/%Y") %>
+          <% end %>
+        </td>
+        <td><%= syndic.user.name %></td>
+        <td><%= link_to 'Detalhes', syndic, class: "btn btn-sm btn-outline-dark" %></td>
+        <td><%= link_to 'Editar', edit_syndic_path(syndic), class: "btn btn-sm btn-outline-dark" %></td>
+        <td><%= link_to 'Remover', syndic, method: :delete, data: { confirm: 'Você deseja remover este síndico?' }, class: "btn btn-sm btn-outline-dark" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Adicionar Síndico', new_syndic_path, class: "btn btn-sm btn-dark" %>

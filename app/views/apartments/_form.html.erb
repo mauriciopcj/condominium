@@ -1,0 +1,28 @@
+<%= form_with(model: apartment, local: true, class: 'p-3') do |form| %>
+  <% if apartment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(apartment.errors.count, "error") %> prohibited this apartment from being saved:</h2>
+
+      <ul>
+      <% apartment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group my-2 row">
+    <%= form.label 'Piso', class: 'col-sm-2 col-form-label'  %>
+    <div class="d-flex col-sm-4">
+      <%= form.number_field :floor, class: 'form-control' %>
+    </div>
+    <%= form.label 'Número', class: 'col-sm-2 col-form-label'  %>
+    <div class="d-flex col-sm-4">
+      <%= form.number_field :number, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="mt-3">
+    <%= form.submit class: "btn btn-primary"%>
+  </div>
+<% end %>

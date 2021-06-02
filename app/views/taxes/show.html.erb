@@ -1,0 +1,42 @@
+<div class="card mt-5">
+  <div class="px-3">
+    <p id="notice"><%= notice %></p>
+
+    <p>
+      <strong>Referência:</strong>
+      <%= @tax.reference_date.strftime("%d/%m/%Y") %>
+    </p>
+
+    <p>
+      <strong>Prazo para pagamento:</strong>
+      <%= @tax.due_date.strftime("%d/%m/%Y") %>
+    </p>
+
+    <p>
+      <strong>Pagamento realizado em:</strong>
+      <% if @tax.payment_date %>
+        <%= @tax.payment_date.strftime("%d/%m/%Y") %>
+      <% end %>     
+    </p>
+
+    <p>
+      <strong>Apartamento:</strong>
+      <%= @tax.apartment.number %>
+    </p>
+
+    <p>
+      <strong>Despesas:</strong>
+      <% @tax.expense.each do |expenses| %>
+        <div>
+          <%= expenses.service_type %>: <%= expenses.value %>
+        </div>
+      <% end %>
+    </p>
+  </div>
+
+  <div class="card-footer">
+    <%= link_to 'Editar', edit_tax_path(@tax), class: 'btn btn-sm btn-outline-dark' %> |
+    <%= link_to 'Voltar', taxes_path, class: 'btn btn-sm btn-outline-dark' %>
+  </div>
+
+</div>

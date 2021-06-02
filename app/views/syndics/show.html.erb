@@ -1,0 +1,28 @@
+<div class="card mt-5">
+  <div class="px-3">
+    <p id="notice"><%= notice %></p>
+
+    <p>
+      <strong>Start:</strong>
+      <%= @syndic.start.strftime("%d/%m/%Y") %>
+    </p>
+
+    <p>
+      <strong>End:</strong>
+      <% if @syndic.end %>
+        <%= @syndic.end.strftime("%d/%m/%Y") %>
+      <% end %> 
+    </p>
+
+    <p>
+      <strong>User:</strong>
+      <%= @syndic.user.name %>
+    </p>
+  </div>
+
+  <div class="card-footer">
+    <%= link_to 'Editar', edit_syndic_path(@syndic), class: 'btn btn-sm btn-outline-dark' %> |
+    <%= link_to 'Voltar', syndics_path, class: 'btn btn-sm btn-outline-dark' %>
+  </div>
+
+</div>

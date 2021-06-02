@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  service_type: MyString
+  value: 9.99
+  tax: one
+
+two:
+  service_type: MyString
+  value: 9.99
+  tax: two

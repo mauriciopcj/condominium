@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  reference_date: 2021-05-30
+  due_date: 2021-05-30
+  payment_date: 2021-05-30
+  apartment: one
+
+two:
+  reference_date: 2021-05-30
+  due_date: 2021-05-30
+  payment_date: 2021-05-30
+  apartment: two

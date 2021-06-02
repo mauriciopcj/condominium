@@ -1,0 +1,10 @@
+<div class="card my-5">
+  <h2 class="card-header">Editando Taxa</h2>
+
+  <%= render 'form', tax: @tax %>
+
+  <div class="card-footer">
+    <%= link_to 'Cancelar', taxes_path, class: "btn btn-sm btn-outline-dark" %> |
+    <%= link_to 'Detalhes', @tax, class: "btn btn-sm btn-outline-dark" %> 
+  </div>
+</div>

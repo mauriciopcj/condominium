@@ -1,0 +1,21 @@
+<div class="card mt-5">
+  <div class="px-3">
+    <p id="notice"><%= notice %></p>
+
+    <p>
+      <strong>Piso:</strong>
+      <%= @apartment.floor %>
+    </p>
+
+    <p>
+      <strong>Número:</strong>
+      <%= @apartment.number %>
+    </p>
+  </div>
+
+  <div class="card-footer">
+    <%= link_to 'Editar', edit_apartment_path(@apartment), class: 'btn btn-sm btn-outline-dark' %> |
+    <%= link_to 'Voltar', apartments_path, class: 'btn btn-sm btn-outline-dark' %>
+  </div>
+
+</div>

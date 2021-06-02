@@ -1,0 +1,9 @@
+<div class="card my-5">
+  <h2 class="card-header">Novo Usuário</h2>
+
+  <%= render 'form', user: @user %>
+
+  <div class="card-footer">
+    <%= link_to 'Cancelar', users_path, class: "btn btn-sm btn-outline-dark" %>
+  </div>
+</div>
